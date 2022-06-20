@@ -209,6 +209,7 @@ def get_speech_timestamps(audio: torch.Tensor,
             print(len(chunk))
             chunk = torch.nn.functional.pad(chunk, (0, int(window_size_samples - len(chunk))))
             print(len(chunk))
+            print(chunk)
         speech_prob = model(chunk, sampling_rate).item()
         print(speech_prob)
         speech_probs.append(speech_prob)
