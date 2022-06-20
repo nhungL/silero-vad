@@ -206,7 +206,7 @@ def get_speech_timestamps(audio: torch.Tensor,
     for current_start_sample in range(0, audio_length_samples, window_size_samples):
         chunk = audio[current_start_sample: current_start_sample + window_size_samples]
         if len(chunk) < window_size_samples:
-            print(len(chunk))
+            print(chunk)
             chunk = torch.nn.functional.pad(chunk, (0, int(window_size_samples - len(chunk))))
             print(len(chunk))
             print(chunk)
